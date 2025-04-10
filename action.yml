@@ -1,21 +1,18 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
-
-# Define your inputs here.
+name: 'Uppercase'
+description: 'Convert text to uppercase'
+author: 'konuma'
 inputs:
-  who-to-greet:
-    description: 'Your input description here'
+  text:
+    description: 'Text to be converted to uppercase'
     required: true
-    default: 'World'
-
-# Define your outputs here.
 outputs:
-  greeting:
-    description: 'Your output description here'
-
+  uppercase-text:
+    description: 'Text converted to uppercase'
 runs:
-  using: docker
-  image: Dockerfile
-  env:
-    INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.text }}
+branding:
+  icon: 'chevrons-up'
+  color: 'green'
