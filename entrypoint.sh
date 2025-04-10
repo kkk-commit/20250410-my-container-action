@@ -1,3 +1,3 @@
-#!/bin/sh -l
+#!/bin/bash
 
-echo "::set-output name=uppercase-text::${1^^}"
+echo "uppercase-text=${1^^}" >> "$GITHUB_OUTPUT"
